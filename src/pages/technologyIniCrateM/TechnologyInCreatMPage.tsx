@@ -1,8 +1,8 @@
-import { TechnologyDates } from "../components/TechnologyDates"
-import { TechnologyDescription } from "../components/TechnologyDescription"
-import { TechnologyDetailsForm } from "../components/TechnologyDetailsForm"
-import { TechnologyHeader } from "../components/TechnologyHeader"
-import { TechnologyTabs } from "../components/TechnologyTabs"
+import { TechnologyDates } from "@shared/components/TechnologyDates"
+import { TechnologyDescription } from "@shared/components/TechnologyDescription"
+import { TechnologyDetailsForm } from "@shared/components/TechnologyDetailsForm"
+import { TechnologyHeader } from "@shared/components/TechnologyHeader"
+import { TechnologyTabs } from "@/shared/components/TechnologyTabs"
 
 export const TechnologyInCreatMPage = () =>{
 

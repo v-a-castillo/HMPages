@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './TableStyles.module.css'; // if using CSS modules
+import styles from '@styles/TableStyles.module.css'; // if using CSS modules
 
 
 // Types

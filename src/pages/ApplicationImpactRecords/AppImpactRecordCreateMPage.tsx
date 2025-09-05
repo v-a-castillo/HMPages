@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './AppImpactRecordCreateMPage.module.css'; // if using CSS modules
+import styles from '@styles/AppImpactRecordCreateMPage.module.css'; // if using CSS modules
 
 export const AppImpactRecordCreateMPage = () => {
   const [formData, setFormData] = useState({

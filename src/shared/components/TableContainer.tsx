@@ -2,7 +2,7 @@ import React from 'react';
 import { TableHeader } from './TableHeader';
 import { TableRow } from './TableRow';
 import { PaginationControls } from './PaginationControls';
-import styles from './TableStyles.module.css'; // if using CSS modules
+import styles from '@styles/TableStyles.module.css'; // if using CSS modules
 
 // Types
 type SortDirection = 'asc' | 'desc';

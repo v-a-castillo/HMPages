@@ -2,7 +2,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { TableHeader } from '../../ApplicationImpactRecords/components/TableHeader.tsx';
+import { TableHeader } from '../../shared/components/TableHeader.tsx';
 
 type SortDir = 'asc' | 'desc';
 

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { TableContainer } from '../components/TableContainer';
-import { Button } from '../../components/ui/button';
+import { TableContainer } from '@shared/components/TableContainer';
 
 type AppImpactRecord = {
   id: number;
