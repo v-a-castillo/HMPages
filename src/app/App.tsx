@@ -1,8 +1,8 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { TechnologyInCreatMPage } from './technologyIniCrateM/pages/TechnologyInCreatMPage'
-import { AppImpactTablePage } from './ApplicationImpactRecords/pages/ApplicationImpactRecords';
-import { AppImpactRecordCreateMPage } from './ApplicationImpactRecords/pages/AppImpactRecordCreateMPage';
+import { TechnologyInCreatMPage } from '../technologyIniCrateM/pages/TechnologyInCreatMPage'
+import { AppImpactTablePage } from '../ApplicationImpactRecords/pages/ApplicationImpactRecords';
+import { AppImpactRecordCreateMPage } from '../ApplicationImpactRecords/pages/AppImpactRecordCreateMPage';
 const App = () => {
   return (
     <Router>
