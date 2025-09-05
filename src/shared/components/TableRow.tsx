@@ -20,6 +20,8 @@ interface TableRowProps {
 }
 
 export const TableRow: React.FC<TableRowProps> = ({ rowData, columns }) => {
+
+  console.log({ rowData }, { columns })
   return (
     <tr data-testid="app-impact-row">
       {columns.map((col) => (
@@ -32,9 +34,16 @@ export const TableRow: React.FC<TableRowProps> = ({ rowData, columns }) => {
             >
               {rowData[col.key]}
             </a>
-          ) : (
-            rowData[col.key]
-          )}
+            ) : (
+              col.key == "percentComplete" ? (col.key == "percentComplete" && <div className="flex items-center gap-2">
+                <span className="text-sm font-medium">{rowData[col.key]}%</span>
+                <div className="w-20 h-2 bg-gray-400 rounded-full overflow-hidden">
+                  <div className="h-full bg-blue-600 transition-all duration-300" style={{ width: `${rowData[col.key]}%` }} />
+                </div>
+              </div>) : (rowData[col.key])
+
+            )
+          }
         </td>
       ))}
     </tr>
