@@ -20,8 +20,6 @@ interface TableRowProps {
 }
 
 export const TableRow: React.FC<TableRowProps> = ({ rowData, columns }) => {
-
-  console.log({ rowData }, { columns })
   return (
     <tr data-testid="app-impact-row">
       {columns.map((col) => (
