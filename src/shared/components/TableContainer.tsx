@@ -36,7 +36,7 @@ interface TableContainerProps {
   totalPages: number;
   onPageChange: (page: number) => void;
   groupByKey?: string | null;
-  
+  path: string
 }
 
 export const TableContainer: React.FC<TableContainerProps> = ({
@@ -49,7 +49,8 @@ export const TableContainer: React.FC<TableContainerProps> = ({
   groupByKey,
   currentPage,
   totalPages,
-  onPageChange
+  onPageChange,
+  path
 }) => {
   const originalData: AppImpactRecord[] = data.filter(() => true); // Create a shallow copy for rendering
 
@@ -89,13 +90,13 @@ export const TableContainer: React.FC<TableContainerProps> = ({
                   </tr>
                 )}
                 {records.map((row) => (
-                  <TableRow key={row.id} rowData={row} columns={columns} />
+                  <TableRow key={row.id} rowData={row} columns={columns} path={path}/>
                 ))}
               </React.Fragment>
             ))
           ) : originalData.length > 0 ? (
             originalData.map((row) => (
-              <TableRow key={row.id} rowData={row} columns={columns} />
+              <TableRow key={row.id} rowData={row} columns={columns} path={path} />
             ))
           ) : (
             <tr>

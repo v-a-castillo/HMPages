@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { use } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Types
 interface Column {
@@ -17,21 +18,22 @@ interface AppImpactRecord {
 interface TableRowProps {
   rowData: AppImpactRecord;
   columns: Column[];
+  path:string
 }
 
-export const TableRow: React.FC<TableRowProps> = ({ rowData, columns }) => {
+export const TableRow: React.FC<TableRowProps> = ({ rowData, columns, path='' }) => {
+
   return (
     <tr data-testid="app-impact-row">
       {columns.map((col) => (
         <td key={col.key}>
+          {/* todo change for the column  */}
           {col.link ? (
-            <a
-              href={`/records/${rowData[col.key]}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={`/${path}/${rowData['id']}`}
             >
               {rowData[col.key]}
-            </a>
+            </Link>
             ) : (
               col.key == "percentComplete" ? (col.key == "percentComplete" && <div className="flex items-center gap-2">
                 <span className="text-sm font-medium">{rowData[col.key]}%</span>

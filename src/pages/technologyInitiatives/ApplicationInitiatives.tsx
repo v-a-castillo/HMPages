@@ -1,15 +1,16 @@
-import { getTechnologyInitiativesAction } from "@/actions/technologyInitiatives/get-technologyInitiatives.action";
+import { getTechnologyInitiativesAction } from "../../actions/technologyInitiatives/get-technologyInitiatives-list.action";
 import { defaultColumnConfigIni } from "@/data/mock-data";
 import { useTableActions } from "@/hooks/useTableActions";
 import { useTMLQuery } from "@/hooks/useTMLQuery";
 import { TableColums } from "@/shared/components/TableColums";
 import { TableContainer } from "@/shared/components/TableContainer";
+import { useNavigate } from "react-router-dom";
 
 
 
 export const ApplicationInitiatives = () => {
 
-  
+  const navigate = useNavigate();
 
   const {data:initiativesList} = useTMLQuery(getTechnologyInitiativesAction, 'TechinitiativesList');
 
@@ -24,6 +25,10 @@ export const ApplicationInitiatives = () => {
     groupByKey,
     visibleColumns,
     handlerColumView} = useTableActions(defaultColumnConfigIni, initiativesList);
+
+  const handlerClicNavigate = () =>{
+    
+  }
 
   return (
     <div>
@@ -59,9 +64,7 @@ export const ApplicationInitiatives = () => {
           <button
             type="button"
             aria-label="Página anterior"
-            onClick={() => {
-              window.location.href = '/app-impact-record-createM';
-            }}
+            onClick={handlerClicNavigate}
           >
             New Record ➕
           </button>
@@ -80,6 +83,7 @@ export const ApplicationInitiatives = () => {
         onPageChange={handlePageChange}
         onGroupBy={handleGroupBy}
         groupByKey={groupByKey}
+        path={"app-initiative"}
       />
 
     </div>
